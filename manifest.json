@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Discord VC Tab Icons",
+  "version": "1.1.0",
+  "description": "表示中サーバーのボイスチャンネルにいるメンバーのアイコンをタブ(ファビコン)に表示します。",
+  "host_permissions": [
+    "https://discord.com/*",
+    "https://*.discord.com/*",
+    "https://cdn.discordapp.com/*",
+    "https://media.discordapp.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://discord.com/*", "https://ptb.discord.com/*", "https://canary.discord.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
