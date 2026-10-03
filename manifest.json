@@ -10,12 +10,12 @@
     "https://media.discordapp.net/*"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "dist/background.js"
   },
   "content_scripts": [
     {
       "matches": ["https://discord.com/*", "https://ptb.discord.com/*", "https://canary.discord.com/*"],
-      "js": ["content.js"],
+      "js": ["dist/content.js"],
       "run_at": "document_idle"
     }
   ]
